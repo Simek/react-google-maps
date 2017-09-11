@@ -4,8 +4,8 @@ import jscodeshift from "jscodeshift"
 
 import tx from "./MapChild"
 
-// const files = fs.readdirSync(path.resolve(__dirname, "../"))
-const files = ["Marker.jsx", "GoogleMap.jsx"]
+const files = fs.readdirSync(path.resolve(__dirname, "../"))
+// const files = ["Marker.jsx", "GoogleMap.jsx"]
 files.map(filename => {
   if (!filename.match(/\.jsx$/)) {
     return
