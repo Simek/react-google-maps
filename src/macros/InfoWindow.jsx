@@ -100,9 +100,9 @@ export default InfoWindow
 
 const open = (infoWindow, anchor) => {
   if (anchor) {
-    infoWindow.open(anchor)
+    infoWindow.open(infoWindow.getMap(), anchor)
   } else if (infoWindow.getPosition()) {
-    infoWindow.open()
+    infoWindow.open(infoWindow.getMap())
   } else {
     invariant(
       false,

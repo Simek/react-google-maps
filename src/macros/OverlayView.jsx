@@ -1,4 +1,5 @@
 /* global google */
+import _ from "lodash"
 import invariant from "invariant"
 import React from "react"
 import ReactDOM from "react-dom"
@@ -91,7 +92,7 @@ export class OverlayView extends React.PureComponent {
       mapPaneName
     )
     // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapPanes
-    const mapPanes = this.state[INFO_WINDOW].getPanes()
+    const mapPanes = this.state[OVERLAY_VIEW].getPanes()
     mapPanes[mapPaneName].appendChild(this.containerElement)
 
     ReactDOM.unstable_renderSubtreeIntoContainer(
@@ -104,7 +105,7 @@ export class OverlayView extends React.PureComponent {
 
   onPositionElement() {
     // https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapCanvasProjection
-    const mapCanvasProjection = this.state[INFO_WINDOW].getProjection()
+    const mapCanvasProjection = this.state[OVERLAY_VIEW].getProjection()
 
     const offset = {
       x: 0,
@@ -132,7 +133,7 @@ export class OverlayView extends React.PureComponent {
   componentDidUpdate(prevProps) {
     componentDidUpdate(
       this,
-      this.state[INFO_WINDOW],
+      this.state[OVERLAY_VIEW],
       eventMap,
       updaterMap,
       prevProps

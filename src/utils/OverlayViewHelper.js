@@ -1,3 +1,4 @@
+/* global google */
 import _ from "lodash"
 
 export function getOffsetOverride(containerElement, props) {
